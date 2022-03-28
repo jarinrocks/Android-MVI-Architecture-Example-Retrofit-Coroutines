@@ -3,11 +3,7 @@ package com.example.mvipattern.repository
 import com.example.mvipattern.NewsStates
 import kotlinx.coroutines.flow.flow
 
-class RepositoryImpl() : Repository {
-
-    override suspend fun getEverything() {
-
-    }
+class RepositoryImpl : Repository {
 
     override suspend fun getTopHeadlines() = flow {
 

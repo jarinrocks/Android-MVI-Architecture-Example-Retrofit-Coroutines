@@ -7,7 +7,7 @@ import retrofit2.http.GET
 
 interface NewsService {
 
-    @GET("top-headlines?token=${Constants.API_KEY}")
+    @GET("top-headlines?lang=en&token=${Constants.API_KEY}")
     suspend fun getTopHeadlines() : Response<NewsData>
 
 

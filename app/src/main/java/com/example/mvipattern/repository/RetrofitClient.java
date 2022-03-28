@@ -12,12 +12,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private Retrofit retrofit;
-    private static OkHttpClient.Builder httpClient =
+    private static final OkHttpClient.Builder httpClient =
             new OkHttpClient.Builder();
     private static RetrofitClient instance = null;
     private static NewsService service = null;
-    private static HttpLoggingInterceptor logging =
+    private static final HttpLoggingInterceptor logging =
             new HttpLoggingInterceptor();
 
     private RetrofitClient() {
@@ -33,7 +32,7 @@ public class RetrofitClient {
             // add logging as last interceptor
             httpClient.addInterceptor(logging);
         }
-        retrofit = new Retrofit.Builder().client(httpClient.build()).
+        Retrofit retrofit = new Retrofit.Builder().client(httpClient.build()).
                 baseUrl(Constants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

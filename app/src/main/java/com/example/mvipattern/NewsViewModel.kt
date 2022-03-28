@@ -2,8 +2,6 @@ package com.example.mvipattern
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mvipattern.NewsIntents
-import com.example.mvipattern.NewsStates
 import com.example.mvipattern.repository.RepositoryImpl
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -11,7 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
 
-class NewsViewModel() : ViewModel() {
+class NewsViewModel : ViewModel() {
 
     val newsChannel = Channel<NewsIntents>()
 
